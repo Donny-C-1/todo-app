@@ -10,6 +10,7 @@
     --secondary-clr: rgb(95, 95, 95);
     --hover-clr: rgb(45, 45, 45);
     --slider-clr: #333;
+    --accent-clr: orange;
 }
 
 body {
@@ -31,9 +32,17 @@ aside {
 }
 
 aside h1 {
-    padding: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 1.7rem;
     font-size: 1.5rem;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+aside h1 svg {
+    height: 3rem;
+    width: 3rem;
+    margin-right: .4rem;
 }
 
 aside nav {
