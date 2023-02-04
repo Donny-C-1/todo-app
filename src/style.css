@@ -8,9 +8,12 @@
     --bg-2: rgb(39, 39, 39);
     --primary-clr: aliceblue;
     --secondary-clr: rgb(95, 95, 95);
+    --tertiary-clr: rgb(57, 57, 57);
     --hover-clr: rgb(45, 45, 45);
     --slider-clr: #333;
+    --priority-bg: #424242;
     --accent-clr: orange;
+    --shadow: rgba(0, 0, 0, .6);
 }
 
 body {
@@ -100,4 +103,43 @@ main{
     min-height: 100vw;
     margin-left: var(--aside-width);
     background-color: var(--bg-2);
+}
+
+.task {
+    display: flex;
+    background-color: var(--tertiary-clr);
+    border-left: 8px solid var(--bg);
+    margin-inline: 1rem;
+    padding: .7em 1em;
+    box-shadow: 0 0 10px var(shadow);
+}
+
+.task input {
+    margin-right: 1em;
+}
+
+.task .description {
+    display: grid;
+    flex: 1;
+}
+
+.task .description p:first-child {
+    font-weight: bold;
+}
+
+.task .description .date {
+    opacity: .7;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.task .priority {
+    font-size: .8em;
+    background-color: var(--priority-bg);
+    /* background-color: black; */
+    padding: .5em 1.2em;
+    border-radius: 30px;
+    box-shadow: .2px .2px 2px 1px var(--primary-clr), 1px 1px 3px 1.5px var(--bg), 1px 1px 3px 1.5px var(--bg);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
 }
