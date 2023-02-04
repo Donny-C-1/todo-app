@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/donny-c-1/todo-app/issues"
   },
-  "homepage": "https://github.com/donny-c-1/todo-app#readme",
+  "homepage": "https://Donny-C-1.github.io",
   "devDependencies": {
     "gh-pages": "^5.0.0",
     "webpack": "^5.75.0",
