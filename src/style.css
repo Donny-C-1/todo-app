@@ -39,7 +39,7 @@ aside h1 {
     align-items: center;
     padding: 1.7rem;
     font-size: 1.5rem;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family: Calibri, 'Trebuchet MS', sans-serif
 }
 
 aside h1 svg {
@@ -103,6 +103,49 @@ main{
     min-height: 100vw;
     margin-left: var(--aside-width);
     background-color: var(--bg-2);
+    padding-inline: 2rem;
+}
+
+#tasks form {
+    display: flex;
+    gap: 1rem;
+    margin-block: 1rem;
+}
+
+#tasks form input[type='text'] {
+    flex: 1;
+    background: transparent;
+    border: 2px solid transparent;
+    border-bottom-color: var(--secondary-clr);
+    color: var(--primary-clr);
+    padding: .7em 1em;
+    transition: border-color .4s, color .4s;
+    border-radius: 4px;
+}
+
+#tasks form input:focus {
+    border: 2px solid var(--accent-clr);
+    outline-color: transparent;
+    outline: none;
+    color: var(--accent-clr);
+}
+
+#tasks form button {
+    cursor: pointer;
+    padding-inline: 1em;
+    border: 2px solid var(--secondary-clr);
+    background-color: transparent;
+    border-radius: 4px;
+    color: var(--primary-clr);
+    transition: all .4s;
+    background-color: var(--tertiary-clr);
+}
+
+#tasks form button:where(:focus-visible, :hover) {
+    /* background: var(--primary-clr); */
+    color: var(--priority-bg);
+    border: 2px solid var(--primary-clr);
+    background-color: var(--primary-clr);
 }
 
 .task {
