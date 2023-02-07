@@ -114,7 +114,7 @@ main header {
 
 header h1 {
     font-size: 2rem;
-    letter-spacing: .3rem;
+    text-transform: capitalize;
 }
 
 main header div {
@@ -148,6 +148,22 @@ main header div img {
 #content {
     padding-inline: 2rem;
 }
+
+#content > div {
+    display: none;
+    animation: opace .5s ease;
+}
+
+@keyframes opace {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+#content > div.active {
+    display: block;
+    opacity: 1;
+}
+
 
 #tasks form {
     display: flex;

@@ -9,18 +9,25 @@ function setup() {
 }
 
 function navigation() {
-    const links = document.querySelectorAll("aside nav a");
-    const nav = document.querySelector("aside nav")
-    let prevActiveLink;
+    let prevActiveLink = document.querySelector('aside nav a');
+    let currentPage = document.getElementById('tasks');
 
-    links.forEach(link => link.addEventListener('click', function (e) {
-        e.preventDefault();
-        prevActiveLink && prevActiveLink.classList.remove('active');
-        this.classList.add('active');
-        prevActiveLink = this;
-        nav.style.setProperty("--top", `${this.offsetTop}px`);
-        console.log(this.getAttribute('href'));
-    }));
+    document.
+        querySelectorAll("aside nav a").
+        forEach(link => link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            prevActiveLink.classList.remove('active');
+            this.classList.add('active');
+            prevActiveLink = this;
+            document.querySelector("aside nav").style.setProperty("--top", `${this.offsetTop}px`);
+
+            currentPage.classList.remove('active');
+            currentPage = document.getElementById(this.getAttribute('href'));
+            currentPage.classList.add('active');
+
+            document.querySelector('main header h1').textContent = this.getAttribute('href');
+        }));
 }
 
 function loadTasks() {
@@ -32,7 +39,7 @@ function taskPage() {
     const form = document.querySelector('#tasks form');
     form.addEventListener('submit', e => {
         e.preventDefault();
-        console.log(e.target[0]); 
+        console.log(e.target[0]);
         const formData = new FormData(e.target);
         const formProps = Object.fromEntries(formData);
         const taskData = Storage.create(formProps.description);
