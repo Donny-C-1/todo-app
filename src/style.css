@@ -103,11 +103,55 @@ main{
     min-height: 100vw;
     margin-left: var(--aside-width);
     background-color: var(--bg-2);
+}
+
+main header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.7rem 2rem 1rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: .3rem;
+}
+
+main header div {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+main header div button {
+    background-color: transparent;
+    border: 0;
+}
+
+main header div button svg {
+    width: 1.2rem;
+    height: 100%;
+    color: var(--primary-clr);
+    cursor: pointer;
+}
+
+main header div img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* * ----- Content Page ----- * */
+#content {
     padding-inline: 2rem;
 }
 
 #tasks form {
     display: flex;
+    align-items: center;
     gap: 1rem;
     margin-block: 1rem;
 }
@@ -130,9 +174,29 @@ main{
     color: var(--accent-clr);
 }
 
-#tasks form button {
+#tasks form button[type="button"] {
+    background-color: transparent;
+    width: 2.5rem;
+    border-radius: 50%;
+    height: 2.5rem;
+    border: 0;
+    color: var(--primary-clr);
     cursor: pointer;
-    padding-inline: 1em;
+    /* transition: color .4s; */
+}
+
+#tasks form button[type='button']:active {
+    color: #aaa;
+    scale: .9;
+}
+
+#tasks form button svg {
+    width: 100%;
+}
+
+#tasks form button[type="submit"] {
+    cursor: pointer;
+    padding: .7rem 1em;
     border: 2px solid var(--secondary-clr);
     background-color: transparent;
     border-radius: 4px;

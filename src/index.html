@@ -111,22 +111,46 @@
 
 	<!-- * ----- Main ----- * -->
 	<main>
-		<h1>Main</h1>
-		<p>Waste of space</p>
-		<div id="tasks">
-			<form action="./" method="post">
-				<input type="text" name="description" placeholder="Enter your task" required>
-				<button type="submit">Add</button>
-			</form>
-			<div class="task-list">
-				<div class="task">
-					<input type="checkbox" name="" id="">
-					<div class="description">
-						<p>Kill somebody</p>
-						<p class="date">Oct 5</p>
-					</div>
-					<div>
-						<span class="priority">urgent</span>
+		<header>
+			<h1>Tasks</h1>
+			<div>
+				<button>
+					<svg width="512" height="512" viewBox="0 0 512 512">
+						<path d="M256,80A176,176,0,1,0,432,256,176,176,0,0,0,256,80Z" style="fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:32px"/>
+						<path d="M200,202.29s.84-17.5,19.57-32.57C230.68,160.77,244,158.18,256,158c10.93-.14,20.69,1.67,26.53,4.45,10,4.76,29.47,16.38,29.47,41.09,0,26-17,37.81-36.37,50.8S251,281.43,251,296" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-miterlimit:10;stroke-width:28px"/>
+						<circle fill="currentColor" cx="250" cy="348" r="20"/>
+					</svg>
+				</button>
+				<button>
+					<svg viewBox="0 0 24 24">
+						<path fill="currentColor" d="M10 21H14C14 22.1 13.1 23 12 23S10 22.1 10 21M21 19V20H3V19L5 17V11C5 7.9 7 5.2 10 4.3V4C10 2.9 10.9 2 12 2S14 2.9 14 4V4.3C17 5.2 19 7.9 19 11V17L21 19M17 11C17 8.2 14.8 6 12 6S7 8.2 7 11V18H17V11Z" />
+					</svg>
+				</button>
+				<p class="user-name">Unknown</p>
+				<img src="./images/bg-96.jpg" alt="avatar" />
+			</div>
+		</header>
+		<div id="content">
+			<div id="tasks">
+				<form action="./" method="post">
+					<input type="text" name="description" placeholder="Enter your task" required>
+					<button type="button" >
+						<svg viewBox="0 0 24 24">
+							<path fill="currentColor" d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z" />
+						</svg>
+					</button>
+					<button type="submit">Add</button>
+				</form>
+				<div class="task-list">
+					<div class="task">
+						<input type="checkbox" name="" id="">
+						<div class="description">
+							<p>Kill somebody</p>
+							<p class="date">Oct 5</p>
+						</div>
+						<div>
+							<span class="priority">urgent</span>
+						</div>
 					</div>
 				</div>
 			</div>
