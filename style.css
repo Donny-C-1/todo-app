@@ -103,11 +103,72 @@ main{
     min-height: 100vw;
     margin-left: var(--aside-width);
     background-color: var(--bg-2);
+}
+
+main header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.7rem 2rem 1rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+main header div {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+main header div button {
+    background-color: transparent;
+    border: 0;
+}
+
+main header div button svg {
+    width: 1.2rem;
+    height: 100%;
+    color: var(--primary-clr);
+    cursor: pointer;
+}
+
+main header div img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* * ----- Content Page ----- * */
+#content {
     padding-inline: 2rem;
 }
 
+#content > div {
+    display: none;
+    animation: opace .5s ease;
+}
+
+@keyframes opace {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+#content > div.active {
+    display: block;
+    opacity: 1;
+}
+
+/* * ----- Tasks ----- * */
+
 #tasks form {
     display: flex;
+    align-items: center;
     gap: 1rem;
     margin-block: 1rem;
 }
@@ -130,9 +191,29 @@ main{
     color: var(--accent-clr);
 }
 
-#tasks form button {
+#tasks form button[type="button"] {
+    background-color: transparent;
+    width: 2.5rem;
+    border-radius: 50%;
+    height: 2.5rem;
+    border: 0;
+    color: var(--primary-clr);
     cursor: pointer;
-    padding-inline: 1em;
+    /* transition: color .4s; */
+}
+
+#tasks form button[type='button']:active {
+    color: #aaa;
+    scale: .9;
+}
+
+#tasks form button svg {
+    width: 100%;
+}
+
+#tasks form button[type="submit"] {
+    cursor: pointer;
+    padding: .7rem 1em;
     border: 2px solid var(--secondary-clr);
     background-color: transparent;
     border-radius: 4px;
@@ -148,37 +229,87 @@ main{
     background-color: var(--primary-clr);
 }
 
-.task {
+#tasks .task-list .task {
     display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-block: 2rem;
+    border-radius: 3px;
     background-color: var(--tertiary-clr);
     border-left: 8px solid var(--bg);
-    margin-inline: 1rem;
     padding: .7em 1em;
     box-shadow: 0 0 10px var(shadow);
 }
 
-.task input {
-    margin-right: 1em;
+#tasks .task-list .task .checkbox-container {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    background-color: #fcfff4;
+    background-image: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 50%;
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.task .description {
+#tasks .task-list .task .checkbox-container label {
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, #222222 0%, #45484d 100%);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#tasks .task-list .task .checkbox-container label input[type='checkbox'] {
+    visibility: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+#tasks .task-list .task .checkbox-container label div {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 2px;
+    top: 2px;
+    background-color: #37ae60;
+    background-image: linear-gradient(to bottom, #27ae60 0%, #145b32 100%);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+#tasks .task-list .task .checkbox-container label:hover div {
+    opacity: .3;
+}
+
+#tasks .task-list .task .checkbox-container label input:checked + div {
+    opacity: 1;
+}
+
+.task .info {
     display: grid;
     flex: 1;
 }
 
-.task .description p:first-child {
+.task .info .description {
     font-weight: bold;
 }
 
-.task .description .date {
+.task .info .date {
     opacity: .7;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: .4em;
+    font-size: .9em;
 }
 
-.task .priority {
+.task .project-category {
     font-size: .8em;
     background-color: var(--priority-bg);
-    /* background-color: black; */
     padding: .5em 1.2em;
     border-radius: 30px;
     box-shadow: .2px .2px 2px 1px var(--primary-clr), 1px 1px 3px 1.5px var(--bg), 1px 1px 3px 1.5px var(--bg);

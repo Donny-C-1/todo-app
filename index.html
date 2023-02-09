@@ -31,7 +31,7 @@
 			<span>todo-app</span>
 		</h1>
 		<nav>
-			<a href="./">
+			<a href="tasks" class="active">
 				<svg width="512" height="512" viewBox="0 0 512 512">
 					<path
 						d="M80,212V448a16,16,0,0,0,16,16h96V328a24,24,0,0,1,24-24h80a24,24,0,0,1,24,24V464h96a16,16,0,0,0,16-16V212"
@@ -43,7 +43,7 @@
 				</svg>
 				<span>Tasks</span>
 			</a>
-			<a href="./projects">
+			<a href="projects">
 				<svg width="512" height="512" viewBox="0 0 512 512">
 					<path
 						d="M64,192V120a40,40,0,0,1,40-40h75.89a40,40,0,0,1,22.19,6.72l27.84,18.56A40,40,0,0,0,252.11,112H408a40,40,0,0,1,40,40v40"
@@ -54,7 +54,7 @@
 				</svg>
 				<span>Projects</span>
 			</a>
-			<a href="./statistics">
+			<a href="statistics">
 				<svg width="512" height="512" viewBox="0 0 512 512">
 					<rect x="64" y="320" width="48" height="160" rx="8" ry="8"
 						style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
@@ -67,7 +67,7 @@
 				</svg>
 				<span>Statistics</span>
 			</a>
-			<a href="./calendar">
+			<a href="calendar">
 				<svg viewBox="0 0 512 512">
 					<rect fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32" x="48" y="80"
 						width="416" height="384" rx="48" />
@@ -89,7 +89,7 @@
 				</svg>
 				<span>Calendar</span>
 			</a>
-			<a href="./history">
+			<a href="history">
 				<svg viewBox="0 0 24 24" fill="currentColor">
 					<path
 						d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3" />
@@ -97,7 +97,7 @@
 				<span>History</span>
 			</a>
 			<div class="bottom">
-				<a href="./settings">
+				<a href="settings">
 					<svg width="512" height="512" viewBox="0 0 512 512">
 						<path
 							d="M262.29,192.31a64,64,0,1,0,57.4,57.4A64.13,64.13,0,0,0,262.29,192.31ZM416.39,256a154.34,154.34,0,0,1-1.53,20.79l45.21,35.46A10.81,10.81,0,0,1,462.52,326l-42.77,74a10.81,10.81,0,0,1-13.14,4.59l-44.9-18.08a16.11,16.11,0,0,0-15.17,1.75A164.48,164.48,0,0,1,325,400.8a15.94,15.94,0,0,0-8.82,12.14l-6.73,47.89A11.08,11.08,0,0,1,298.77,470H213.23a11.11,11.11,0,0,1-10.69-8.87l-6.72-47.82a16.07,16.07,0,0,0-9-12.22,155.3,155.3,0,0,1-21.46-12.57,16,16,0,0,0-15.11-1.71l-44.89,18.07a10.81,10.81,0,0,1-13.14-4.58l-42.77-74a10.8,10.8,0,0,1,2.45-13.75l38.21-30a16.05,16.05,0,0,0,6-14.08c-.36-4.17-.58-8.33-.58-12.5s.21-8.27.58-12.35a16,16,0,0,0-6.07-13.94l-38.19-30A10.81,10.81,0,0,1,49.48,186l42.77-74a10.81,10.81,0,0,1,13.14-4.59l44.9,18.08a16.11,16.11,0,0,0,15.17-1.75A164.48,164.48,0,0,1,187,111.2a15.94,15.94,0,0,0,8.82-12.14l6.73-47.89A11.08,11.08,0,0,1,213.23,42h85.54a11.11,11.11,0,0,1,10.69,8.87l6.72,47.82a16.07,16.07,0,0,0,9,12.22,155.3,155.3,0,0,1,21.46,12.57,16,16,0,0,0,15.11,1.71l44.89-18.07a10.81,10.81,0,0,1,13.14,4.58l42.77,74a10.8,10.8,0,0,1-2.45,13.75l-38.21,30a16.05,16.05,0,0,0-6.05,14.08C416.17,247.67,416.39,251.83,416.39,256Z"
@@ -111,25 +111,64 @@
 
 	<!-- * ----- Main ----- * -->
 	<main>
-		<h1>Main</h1>
-		<p>Waste of space</p>
-		<div id="tasks">
-			<form action="./" method="post">
-				<input type="text" name="description" placeholder="Enter your task" required>
-				<button type="submit">Add</button>
-			</form>
-			<div class="task-list">
-				<div class="task">
-					<input type="checkbox" name="" id="">
-					<div class="description">
-						<p>Kill somebody</p>
-						<p class="date">Oct 5</p>
-					</div>
-					<div>
-						<span class="priority">urgent</span>
-					</div>
-				</div>
+		<header>
+			<h1>Tasks</h1>
+			<div>
+				<button>
+					<svg width="512" height="512" viewBox="0 0 512 512">
+						<path d="M256,80A176,176,0,1,0,432,256,176,176,0,0,0,256,80Z" style="fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:32px"/>
+						<path d="M200,202.29s.84-17.5,19.57-32.57C230.68,160.77,244,158.18,256,158c10.93-.14,20.69,1.67,26.53,4.45,10,4.76,29.47,16.38,29.47,41.09,0,26-17,37.81-36.37,50.8S251,281.43,251,296" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-miterlimit:10;stroke-width:28px"/>
+						<circle fill="currentColor" cx="250" cy="348" r="20"/>
+					</svg>
+				</button>
+				<button>
+					<svg viewBox="0 0 24 24">
+						<path fill="currentColor" d="M10 21H14C14 22.1 13.1 23 12 23S10 22.1 10 21M21 19V20H3V19L5 17V11C5 7.9 7 5.2 10 4.3V4C10 2.9 10.9 2 12 2S14 2.9 14 4V4.3C17 5.2 19 7.9 19 11V17L21 19M17 11C17 8.2 14.8 6 12 6S7 8.2 7 11V18H17V11Z" />
+					</svg>
+				</button>
+				<p class="user-name">Unknown</p>
+				<img src="./images/avatar.jpg" alt="avatar" />
 			</div>
+		</header>
+
+		<!-- * ----- Tasks Page ----- * -->
+		<div id="content">
+			<div id="tasks" class="active">
+				<form action="./" method="post">
+					<input type="text" name="description" placeholder="Enter your task" autocomplete="off" required>
+					<button type="button" >
+						<svg viewBox="0 0 24 24">
+							<path fill="currentColor" d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z" />
+						</svg>
+					</button>
+					<button type="submit">Add</button>
+				</form>
+				<ul class="task-list">
+					<template data-name="task-item">
+						<li class="task">
+							<div class="checkbox-container">
+								<label>
+									<input type="checkbox">
+									<div class="box"></div>
+								</label>
+							</div>
+							<div class="info">
+								<p class="description">Kill somebody</p>
+								<p class="date">Oct 5</p>
+							</div>
+							<div>
+								<span class="project-category">urgent</span>
+							</div>
+						</li>
+					</template>
+				</ul>
+			</div>
+			<div id="projects">
+			</div>
+			<div id="statistics"></div>
+			<div id="calendar"></div>
+			<div id="history"></div>
+			<div id="settings"></div>
 		</div>
 	</main>
 
