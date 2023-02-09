@@ -39,7 +39,6 @@ function taskPage() {
     const form = document.querySelector('#tasks form');
     form.addEventListener('submit', e => {
         e.preventDefault();
-        console.log(e.target[0]);
         const formData = new FormData(e.target);
         const formProps = Object.fromEntries(formData);
         const taskData = Storage.create(formProps.description);
@@ -54,12 +53,13 @@ function taskPage() {
 function dispTask(obj) {
     const taskList = document.getElementsByClassName('task-list')[0];
     const element = document.
-        querySelector('template[data-id="task-item"]').
+        querySelector('template[data-name="task-item"]').
         content.
-        children[0].
         cloneNode(true);
-    element.getElementsByClassName('title')[0].textContent = obj.description;
-    element.getElementsByClassName('date')[0].textContent = obj.creationDate;
-    element.getElementsByClassName('priority')[0].textContent = 'average';
+
+    element.querySelector('.description').textContent = obj.description;
+    element.querySelector('.date').textContent = obj.creationDate.toLocaleString('en-US', {month: 'short', day: 'numeric'});
+    element.querySelector('.project-category').textContent = obj.projectName || 'General';
+
     taskList.append(element);
 }

@@ -130,10 +130,12 @@
 				<img src="./images/bg-96.jpg" alt="avatar" />
 			</div>
 		</header>
+
+		<!-- * ----- Tasks Page ----- * -->
 		<div id="content">
 			<div id="tasks" class="active">
 				<form action="./" method="post">
-					<input type="text" name="description" placeholder="Enter your task" required>
+					<input type="text" name="description" placeholder="Enter your task" autocomplete="off" required>
 					<button type="button" >
 						<svg viewBox="0 0 24 24">
 							<path fill="currentColor" d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z" />
@@ -141,18 +143,25 @@
 					</button>
 					<button type="submit">Add</button>
 				</form>
-				<div class="task-list">
-					<div class="task">
-						<input type="checkbox" name="" id="">
-						<div class="description">
-							<p>Kill somebody</p>
-							<p class="date">Oct 5</p>
-						</div>
-						<div>
-							<span class="priority">urgent</span>
-						</div>
-					</div>
-				</div>
+				<ul class="task-list">
+					<template data-name="task-item">
+						<li class="task">
+							<div class="checkbox-container">
+								<label>
+									<input type="checkbox">
+									<div class="box"></div>
+								</label>
+							</div>
+							<div class="info">
+								<p class="description">Kill somebody</p>
+								<p class="date">Oct 5</p>
+							</div>
+							<div>
+								<span class="project-category">urgent</span>
+							</div>
+						</li>
+					</template>
+				</ul>
 			</div>
 			<div id="projects">
 			</div>
